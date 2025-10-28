@@ -1,12 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const path = require('path');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 600,
     height: 600,
     frame: false,
-    transparent: true,
+    transparent: false,
     webPreferences: {
       sandbox: false,
       nodeIntegration: true,
@@ -14,11 +13,11 @@ function createWindow() {
     }
   });
 
-  mainWindow.loadFile('src/pages/index.html');
+  mainWindow.loadFile('src/index.html');
 
-/*  const devtools = new BrowserWindow();
+  const devtools = new BrowserWindow();
   mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
-  mainWindow.webContents.openDevTools({ mode: 'detach' });*/
+  mainWindow.webContents.openDevTools({ mode: 'detach' });
 }
 /*
 app.on('window-all-closed', () => {
